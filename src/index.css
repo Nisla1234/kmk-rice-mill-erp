@@ -1,0 +1,304 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #1B2420;
+  --ink-soft: #4B564E;
+  --paper: #F6F5F0;
+  --card: #FFFFFF;
+  --field: #2F5D45;
+  --field-dark: #1E3E2E;
+  --field-tint: #E7EFE9;
+  --gold: #C68A2E;
+  --gold-light: #F3E3C2;
+  --clay: #A63D2C;
+  --clay-tint: #F5E2DD;
+  --teal: #1F6F63;
+  --teal-tint: #DFEEEB;
+  --line: #DEDACB;
+  --line-soft: #EAE7DA;
+  --shadow: 0 1px 2px rgba(27,36,32,0.06), 0 6px 16px rgba(27,36,32,0.05);
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+h1, h2, h3, .display {
+  font-family: 'Fraunces', serif;
+}
+
+/* Sidebar textures */
+.sidebar-pattern {
+  background-color: var(--field-dark);
+}
+
+.sidebar-binder {
+  position: relative;
+}
+
+/* Custom UI Components */
+.btn {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  transition: all .12s ease;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  border-color: var(--field);
+  color: var(--field-dark);
+}
+
+.btn-primary {
+  background: var(--field);
+  border-color: var(--field);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--field-dark);
+  color: #fff;
+}
+
+.btn-gold {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #fff;
+}
+
+.btn-gold:hover {
+  background: #B27A24;
+  color: #fff;
+}
+
+.btn-ghost {
+  background: none;
+}
+
+.btn-sm {
+  padding: 7px 11px;
+  font-size: 12px;
+}
+
+.btn-danger {
+  color: var(--clay);
+  border-color: var(--clay-tint);
+}
+
+.btn-danger:hover {
+  background: var(--clay-tint);
+  border-color: var(--clay);
+}
+
+.btn:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
+/* Subtab Pills */
+.subtab-pill {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 8px 15px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink-soft);
+  border-radius: 9px;
+  cursor: pointer;
+  transition: all .12s ease;
+  white-space: nowrap;
+}
+
+.subtab-pill:hover {
+  border-color: var(--field);
+  color: var(--field-dark);
+}
+
+.subtab-pill.active {
+  background: var(--field-tint);
+  border-color: var(--field);
+  color: var(--field-dark);
+}
+
+/* Badges & Chips */
+.ref-badge {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  background: var(--gold-light);
+  color: #7A5518;
+  padding: 3px 8px;
+  border-radius: 5px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.pay-chip {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.pay-chip.cash {
+  background: var(--teal-tint);
+  color: var(--teal);
+}
+
+.pay-chip.credit {
+  background: var(--clay-tint);
+  color: var(--clay);
+}
+
+.icon-btn {
+  border: 1px solid var(--line);
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  color: var(--ink-soft);
+  transition: all 0.12s ease;
+}
+
+.icon-btn:hover {
+  border-color: var(--field);
+  color: var(--field-dark);
+}
+
+.icon-btn.danger:hover {
+  border-color: var(--clay);
+  color: var(--clay);
+  background: var(--clay-tint);
+}
+
+/* Custom form inputs */
+select, input[type=text], input[type=date], input[type=number], textarea {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 7px;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+}
+
+select:focus, input:focus, textarea:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+  border-color: var(--gold);
+}
+
+/* Variety rows for forms */
+.variety-rows {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.vr-head, .vr-row {
+  display: grid;
+  gap: 8px;
+  padding: 9px 10px;
+  align-items: center;
+}
+
+.vr-head {
+  background: var(--field-tint);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .4px;
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.vr-row {
+  border-top: 1px solid var(--line-soft);
+}
+
+.vr-row select, .vr-row input {
+  width: 100%;
+  padding: 7px 8px;
+  font-size: 12.5px;
+}
+
+.vr-remove {
+  border: none;
+  background: none;
+  color: var(--clay);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-variety-link {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--field);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.add-variety-link:hover {
+  text-decoration: underline;
+}
+
+.totals-strip {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  padding: 12px 4px;
+  font-size: 13px;
+}
+
+.totals-strip b {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+/* AI typing animation */
+@keyframes aiTyping {
+  0%, 60%, 100% { transform: translateY(0); opacity: .4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+.ai-dot-1 { animation: aiTyping 1.1s infinite ease-in-out; }
+.ai-dot-2 { animation: aiTyping 1.1s infinite ease-in-out; animation-delay: .15s; }
+.ai-dot-3 { animation: aiTyping 1.1s infinite ease-in-out; animation-delay: .3s; }
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #D2CDBA; border-radius: 10px; }

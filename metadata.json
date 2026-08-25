@@ -1,0 +1,8 @@
+{
+  "name": "KMK Rice Mill ERP",
+  "description": "Office ERP for KMK Rice Mill — Raw Material Registry, Production Records, Sales & Billing, Finance, Payroll, and AI Assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
